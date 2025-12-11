@@ -490,3 +490,83 @@ footer {
 .mobile-nav.open {
   display: block;
 }
+/* DESKTOP NAV */
+.desktop-nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* MOBILE NAV INITIALLY HIDDEN */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeDown 0.25s ease forwards;
+}
+
+.mobile-nav a {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  color: var(--purple-deep);
+}
+
+/* ANIMATION FOR DROPDOWN */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HAMBURGER LINES */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: var(--purple-deep);
+  transition: 0.3s ease;
+  border-radius: 3px;
+}
+
+/* TURN INTO X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* MOBILE RESPONSIVE RULES */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+}
+
