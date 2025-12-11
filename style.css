@@ -481,3 +481,15 @@ footer a {
 .btn-pro:hover {
   background: #7c57c4;
 }
+
+/* ANIMATION: Fade-in on scroll */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
