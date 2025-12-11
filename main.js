@@ -1,24 +1,44 @@
-// Set year in footer
+/* ---------------------------------------
+   1. Auto-update footer year
+---------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
 });
-// Fade-in scroll animation
-const animatedElements = document.querySelectorAll('.animate');
 
-function revealOnScroll() {
-  const triggerBottom = window.innerHeight * 0.90;
+/* ---------------------------------------
+   2. Soft fade-in when elements come into view
+---------------------------------------- */
 
-  animatedElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade");
+        observer.unobserve(entry.target); // prevents repeated animation
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
-    if (elementTop < triggerBottom) {
-      el.classList.add('visible');
+// Apply to all sections and hero elements
+document.querySelectorAll("section, .hero, header, footer").forEach((el) => {
+  observer.observe(el);
+});
+
+/* ---------------------------------------
+   3. Smooth internal link scrolling
+---------------------------------------- */
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+});
