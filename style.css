@@ -1,0 +1,303 @@
+/* -----------------------------------------------------
+   GLOBAL RESET
+----------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Lato', sans-serif;
+  background: #faf8fc;
+  color: #2b1f33;
+  scroll-behavior: smooth;
+}
+
+/* -----------------------------------------------------
+   TYPOGRAPHY
+----------------------------------------------------- */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #322248;
+}
+
+h1 { font-size: 2.4rem; line-height: 1.25; }
+h2 { font-size: 2rem; margin-bottom: 12px; }
+h3 { font-size: 1.25rem; margin-bottom: 8px; }
+
+/* -----------------------------------------------------
+   PAGE WRAPPER
+----------------------------------------------------- */
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* -----------------------------------------------------
+   HEADER
+----------------------------------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.brand-text-top {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6e3daa;
+}
+
+.brand-text-main {
+  font-size: 0.85rem;
+  color: #725d85;
+  margin-top: -4px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #4f3b67;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #6e3daa;
+}
+
+/* -----------------------------------------------------
+   HERO SECTION
+----------------------------------------------------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 50px 0 30px;
+  gap: 40px;
+}
+
+.hero-text-block {
+  flex: 1 1 420px;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------
+   BUTTONS
+----------------------------------------------------- */
+.btn-primary,
+.btn-secondary,
+.btn-pro {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: #6e3daa;
+  color: white;
+  border: none;
+  box-shadow: 0 0 0 rgba(110,61,170,0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 14px rgba(110,61,170,0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #6e3daa;
+  color: #6e3daa;
+}
+
+.btn-secondary:hover {
+  background: #6e3daa;
+  color: white;
+}
+
+.btn-pro {
+  background: #3b2a4f;
+  color: white;
+  padding: 14px 24px;
+  margin-top: 14px;
+}
+
+.btn-pro:hover {
+  opacity: 0.85;
+}
+
+/* -----------------------------------------------------
+   SECTIONS
+----------------------------------------------------- */
+.section {
+  margin: 60px 0;
+}
+
+.section-narrow {
+  max-width: 800px;
+  margin: 60px auto;
+}
+
+.section-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #efe7ff;
+  border-radius: 20px;
+  color: #6e3daa;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  margin-bottom: 18px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* -----------------------------------------------------
+   CARDS
+----------------------------------------------------- */
+.card-soft {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid #e8dffa;
+  box-shadow: 0 4px 12px rgba(115, 71, 149, 0.05);
+}
+
+/* -----------------------------------------------------
+   BULLETS
+----------------------------------------------------- */
+.bullet {
+  margin-top: 10px;
+  padding-left: 22px;
+  line-height: 1.6;
+}
+
+.bullet li {
+  margin-bottom: 6px;
+}
+
+/* -----------------------------------------------------
+   FOOTER
+----------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  font-size: 0.9rem;
+  color: #6e5f78;
+}
+
+/* -----------------------------------------------------
+   ANIMATIONS
+----------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s ease;
+}
+
+.fade-in-stagger.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE DESIGN
+----------------------------------------------------- */
+@media (max-width: 900px) {
+  nav a {
+    margin-left: 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .brand-text-main {
+    font-size: 0.8rem;
+  }
+}
