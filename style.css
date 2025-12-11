@@ -175,15 +175,16 @@ nav a:hover {
 }
 
 /* SECONDARY — outline button */
-.btn-secondary {
-  background: transparent;
-  border: 2px solid #7d47ff;
-  color: #7d47ff;
+.btn-secondary-solid {
+  background: #fff;
+  border: 2px solid var(--purple-deep);
+  color: var(--purple-deep);
+  font-weight: 600;
 }
 
-.btn-secondary:hover {
-  background: #ede1ff;
-  box-shadow: 0 0 14px rgba(125, 71, 255, 0.4);
+.btn-secondary-solid:hover {
+  background: var(--purple-deep);
+  color: #fff;
 }
 
 /* PROFESSIONAL BUTTON */
