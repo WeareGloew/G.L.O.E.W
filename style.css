@@ -413,7 +413,7 @@ ul.bullet li {
   position: relative;
   max-width: 650px;
   margin: auto;
-  min-height: 80px; /* THIS fixes the huge empty gap */
+  min-height: 50px; /* THIS fixes the huge empty gap */
   z-index: 2;
 }
 
