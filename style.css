@@ -411,7 +411,7 @@ ul.bullet li {
 
 .testimonial-container {
   position: relative;
-  max-width: 720px;
+  max-width: 650px;
   margin: auto;
   min-height: 80px; /* THIS fixes the huge empty gap */
   z-index: 2;
@@ -437,7 +437,7 @@ ul.bullet li {
 /* Little decorative divider */
 .testimonial-divider {
   margin-top: 16px;
-  font-size: 32px;
+  font-size: 28px;
   color: #7d47ff;
   opacity: 0.8;
   position: relative;
