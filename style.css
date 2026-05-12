@@ -635,6 +635,32 @@ footer {
   filter: blur(60px);
 }
 
+.social-icons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 28px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #d8b4fe;
+  transform: translateY(-3px);
+}
+
+.footer-text,
+.copyright {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 @keyframes glowMove {
   from { transform: translate(0, 0); }
   to { transform: translate(80px, 60px); }
