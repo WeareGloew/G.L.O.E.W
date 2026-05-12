@@ -403,7 +403,7 @@ ul.bullet li {
 
 .testimonial-title {
   font-size: 28px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   color: #5e2a84;
   position: relative;
   z-index: 2;
@@ -413,7 +413,7 @@ ul.bullet li {
   position: relative;
   max-width: 720px;
   margin: auto;
-  min-height: 120px; /* THIS fixes the huge empty gap */
+  min-height: 80px; /* THIS fixes the huge empty gap */
   z-index: 2;
 }
 
@@ -436,7 +436,7 @@ ul.bullet li {
 
 /* Little decorative divider */
 .testimonial-divider {
-  margin-top: 30px;
+  margin-top: 16px;
   font-size: 32px;
   color: #7d47ff;
   opacity: 0.8;
