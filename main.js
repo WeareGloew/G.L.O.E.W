@@ -1,5 +1,10 @@
-// Set footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+// Set footer year, only if the year element exists
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
 
 // Fade-in on scroll
 const animatedElements = document.querySelectorAll(".fade-in, .fade-in-stagger");
@@ -7,6 +12,7 @@ const animatedElements = document.querySelectorAll(".fade-in, .fade-in-stagger")
 function handleFade() {
   animatedElements.forEach(el => {
     const rect = el.getBoundingClientRect();
+
     if (rect.top < window.innerHeight - 100) {
       el.classList.add("visible");
     }
@@ -15,39 +21,25 @@ function handleFade() {
 
 window.addEventListener("scroll", handleFade);
 window.addEventListener("load", handleFade);
-document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("header nav");
 
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("nav-open");
-      navToggle.classList.toggle("nav-open");
+
+// Hamburger menu toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobile-nav");
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileNav.classList.toggle("open");
     });
 
-    // Close menu when a link is clicked
-    nav.querySelectorAll("a").forEach(link => {
+    // Close menu when a mobile nav link is clicked
+    mobileNav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
-        nav.classList.remove("nav-open");
-        navToggle.classList.remove("nav-open");
+        hamburger.classList.remove("active");
+        mobileNav.classList.remove("open");
       });
     });
-
-    // Reset on resize to desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        nav.classList.remove("nav-open");
-        navToggle.classList.remove("nav-open");
-      }
-    });
   }
-});
-
-// HAMBURGER MENU TOGGLE
-const hamburger = document.getElementById("hamburger");
-const mobileNav = document.getElementById("mobile-nav");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileNav.classList.toggle("open");
 });
