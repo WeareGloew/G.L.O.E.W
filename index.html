@@ -130,7 +130,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <p class="testimonial">
       “How comfortable i felt after speaking to everyone, sharing my ideas , being a small group made a more personalized experience.”
     </p> 
-    
+
+<!-- JS -->
+<script src="main.js"></script>
+
+<script>
+  const testimonials = document.querySelectorAll(".testimonial");
+  let index = 0;
+
+  function showNextTestimonial() {
+    testimonials[index].classList.remove("active");
+    index = (index + 1) % testimonials.length;
+    testimonials[index].classList.add("active");
+  }
+
+  setInterval(showNextTestimonial, 6500);
+</script>
+
  <div class="card-soft">
 
   <div class="social-icons">
@@ -163,22 +179,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </p>
 
 </div>
-
-<!-- JS -->
-<script src="main.js"></script>
-
-<script>
-  const testimonials = document.querySelectorAll(".testimonial");
-  let index = 0;
-
-  function showNextTestimonial() {
-    testimonials[index].classList.remove("active");
-    index = (index + 1) % testimonials.length;
-    testimonials[index].classList.add("active");
-  }
-
-  setInterval(showNextTestimonial, 6500);
-</script>
 
 </body>
 </html>
