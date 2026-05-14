@@ -445,6 +445,31 @@ ul.bullet li {
 }
 
 /* ------------------------------
+   DONATION SECTION
+------------------------------ */
+
+.donation-card {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.donation-title {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #4b216f;
+}
+
+.donation-text {
+  max-width: 650px;
+  margin: 0 auto 18px;
+  line-height: 1.8;
+}
+
+.donation-btn {
+  margin-top: 10px;
+}
+
+/* ------------------------------
    FOOTER / SOCIAL ICONS
 ------------------------------ */
 footer,
@@ -561,9 +586,9 @@ footer,
     font-size: 26px;
   }
 
-  .testimonial-container {
-    min-height: 180px;
-  }
+ .testimonial-container {
+  min-height: 110px;
+}
 
   .testimonial {
     font-size: 17px;
